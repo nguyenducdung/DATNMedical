@@ -1,13 +1,13 @@
 package com.bkhust.dungnd.datnmedical.ui.splash;
 
 import com.bkhust.dungnd.datnmedical.R;
-import com.bkhust.dungnd.datnmedical.databinding.SplashFragmentBinding;
+import com.bkhust.dungnd.datnmedical.databinding.FragmentSplashBinding;
 import com.bkhust.dungnd.datnmedical.ui.base.BaseFragment;
 
-public class SplashFragment extends BaseFragment<SplashFragmentBinding> {
+public class SplashFragment extends BaseFragment<FragmentSplashBinding> {
     @Override
     protected int getLayout() {
-        return R.layout.splash_fragment;
+        return R.layout.fragment_splash;
     }
 
 }
