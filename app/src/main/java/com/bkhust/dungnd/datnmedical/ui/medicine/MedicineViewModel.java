@@ -1,4 +1,6 @@
 package com.bkhust.dungnd.datnmedical.ui.medicine;
 
-public class MedicineViewModel {
+import com.bkhust.dungnd.datnmedical.ui.base.BaseViewModel;
+
+public class MedicineViewModel extends BaseViewModel {
 }

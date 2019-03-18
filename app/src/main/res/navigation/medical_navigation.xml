@@ -1,19 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/medical_navigation"
     app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.bkhust.dungnd.datnmedical.ui.splash.SplashFragment"
-        android:label="SplashFragment" >
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.bkhust.dungnd.datnmedical.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_medicineFragment"
+            app:destination="@id/medicineFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_diseasFragment"
+            app:destination="@id/diseasFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_chineseMedicineFragment"
+            app:destination="@id/chineseMedicineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/diseasFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.diseas.DiseasFragment"
+        android:label="DiseasFragment"
+        tools:layout="@layout/fragment_diseas">
+        <action
+            android:id="@+id/action_diseasFragment_to_diseasDetailFragment"
+            app:destination="@id/diseasDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.food.FoodFragment"
+        android:label="FoodFragment"
+        tools:layout="@layout/fragment_food"/>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"/>
+    <fragment
+        android:id="@+id/medicineFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.medicine.MedicineFragment"
+        android:label="MedicineFragment"
+        tools:layout="@layout/fragment_medicine">
+        <action
+            android:id="@+id/action_medicineFragment_to_medicineDetailFragment"
+            app:destination="@id/medicineDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.news.NewsFragment"
+        android:label="NewsFragment"
+        tools:layout="@layout/fragment_news"/>
+    <fragment
+        android:id="@+id/chineseMedicineFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.chinese.ChineseMedicineFragment"
+        android:label="ChineseMedicineFragment"
+        tools:layout="@layout/fragment_chinese_medicine"/>
+    <fragment
+        android:id="@+id/diseasDetailFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.diseas.detail.DiseasDetailFragment"
+        android:label="DiseasDetailFragment"
+        tools:layout="@layout/fragment_disease_detail"/>
+    <fragment
+        android:id="@+id/medicineDetailFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.medicine.detail.MedicineDetailFragment"
+        android:label="MedicineDetailFragment"
+        tools:layout="@layout/fragment_medicine_detail"/>
 </navigation>

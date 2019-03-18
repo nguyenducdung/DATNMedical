@@ -1,5 +1,7 @@
 package com.bkhust.dungnd.datnmedical.ui.base;
 
+import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -10,8 +12,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public abstract class BaseFragment<Binding extends ViewDataBinding> extends Fragment {
+import com.bkhust.dungnd.datnmedical.R;
+import com.bkhust.dungnd.datnmedical.ui.main.MainActivity;
+import com.bkhust.dungnd.datnmedical.ui.main.MainViewModel;
+
+import java.util.Objects;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
+public abstract class BaseFragment<Binding extends ViewDataBinding, V extends ViewModel> extends Fragment {
     protected Binding binding;
+    protected V viewModel;
+    protected MainViewModel mainViewModel;
+    protected NavController navController;
+
 
     @Nullable
     @Override
@@ -22,5 +37,21 @@ public abstract class BaseFragment<Binding extends ViewDataBinding> extends Frag
         return binding.getRoot();
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        navController = Navigation.findNavController(Objects.requireNonNull(getActivity()), R.id.navHostFragment);
+        mainViewModel = ViewModelProviders.of(getActivity()).get(MainViewModel.class);
+        viewModel = ViewModelProviders.of(getActivity()).get(getModelClass());
+    }
+
+    protected abstract Class<V> getModelClass();
+
     protected abstract int getLayout();
+
+    protected void setToolBarTitle(String title) {
+        if (getActivity() != null) {
+            ((MainActivity) getActivity()).getToolBar().setTitle(title);
+        }
+    }
 }
