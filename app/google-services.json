@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "504309872641",
+    "firebase_url": "https://datnmedical.firebaseio.com",
+    "project_id": "datnmedical",
+    "storage_bucket": "datnmedical.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504309872641:android:f4d4375d23245170",
+        "android_client_info": {
+          "package_name": "com.bkhust.dungnd.datnmedical"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504309872641-4m933fd5215ggaht731e293ebfflt0d7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bkhust.dungnd.datnmedical",
+            "certificate_hash": "91ff90a77313a27e129363b31633ae623052e065"
+          }
+        },
+        {
+          "client_id": "504309872641-o0o43eq0emj655u4mjbng8uuvpf4ac7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvvhogkY1bDbyyX6oYp2s7d1B5lvV77Gw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504309872641-o0o43eq0emj655u4mjbng8uuvpf4ac7r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

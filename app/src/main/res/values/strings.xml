@@ -12,5 +12,6 @@
     <string name="fragment_medicine">Thuốc</string>
     <string name="fragment_medicine_detail">Chi tiết thuốc</string>
     <string name="fragment_news">Tin tức</string>
+    <string name="todo">TODO</string>
 
 </resources>
