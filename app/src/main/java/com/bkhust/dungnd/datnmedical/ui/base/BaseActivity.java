@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
+
 public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatActivity {
     protected T binding;
 
@@ -13,6 +15,7 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, getLayoutMain());
+        FirebaseApp.initializeApp(this);
         inits();
     }
 

@@ -15,6 +15,10 @@ import android.view.ViewGroup;
 import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.ui.main.MainActivity;
 import com.bkhust.dungnd.datnmedical.ui.main.MainViewModel;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.Objects;
 
@@ -26,6 +30,8 @@ public abstract class BaseFragment<Binding extends ViewDataBinding, V extends Vi
     protected V viewModel;
     protected MainViewModel mainViewModel;
     protected NavController navController;
+
+    protected DatabaseReference reference;
 
 
     @Nullable
@@ -43,6 +49,7 @@ public abstract class BaseFragment<Binding extends ViewDataBinding, V extends Vi
         navController = Navigation.findNavController(Objects.requireNonNull(getActivity()), R.id.navHostFragment);
         mainViewModel = ViewModelProviders.of(getActivity()).get(MainViewModel.class);
         viewModel = ViewModelProviders.of(getActivity()).get(getModelClass());
+
     }
 
     protected abstract Class<V> getModelClass();

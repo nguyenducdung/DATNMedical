@@ -1,15 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.home.HomeFragment">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/fragment_home" />
 
-    </FrameLayout>
+        <TextView
+            android:text="@string/fragment_chinese_medicine"
+            android:layout_below="@id/home"
+            android:id="@+id/fragmentChineseMedicine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/fragmentDisease"
+            android:text="@string/fragment_disease"
+            android:layout_below="@id/fragmentChineseMedicine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/fragmentMedicine"
+            android:text="@string/fragment_medicine"
+            android:layout_below="@id/fragmentDisease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_below="@id/fragmentMedicine"
+            android:text="@string/fragment_food"
+            android:id="@+id/fragmentFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_below="@id/fragmentFood"
+            android:text="@string/fragment_login"
+            android:id="@+id/fragmentLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
 </layout>
