@@ -7,8 +7,6 @@ import android.view.View;
 import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.databinding.FragmentHomeBinding;
 import com.bkhust.dungnd.datnmedical.ui.base.BaseFragment;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeViewModel> implements View.OnClickListener {
 
@@ -33,6 +31,10 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeViewMode
     public void onStart() {
         super.onStart();
         binding.fragmentDisease.setOnClickListener(this);
+        binding.fragmentChineseMedicine.setOnClickListener(this);
+        binding.fragmentFood.setOnClickListener(this);
+        binding.fragmentLogin.setOnClickListener(this);
+        binding.fragmentMedicine.setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +42,18 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeViewMode
         switch (v.getId()) {
             case R.id.fragmentDisease:
                 navController.navigate(R.id.action_homeFragment_to_diseasFragment);
+                break;
+            case R.id.fragmentChineseMedicine:
+                navController.navigate(R.id.action_homeFragment_to_chineseMedicineFragment);
+                break;
+            case R.id.fragmentFood:
+                navController.navigate(R.id.action_homeFragment_to_foodFragment);
+                break;
+            case R.id.fragmentLogin:
+                navController.navigate(R.id.action_homeFragment_to_loginFragment);
+                break;
+            case R.id.fragmentMedicine:
+                navController.navigate(R.id.action_homeFragment_to_medicineFragment);
                 break;
             default:
                 break;

@@ -11,11 +11,12 @@ import com.bkhust.dungnd.datnmedical.ui.base.BaseFragment;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class DiseasFragment extends BaseFragment<FragmentDiseasBinding, DiseasViewModel> {
-    private FirebaseDatabase database;
+    private DatabaseReference reference;
 
     @Override
     protected Class<DiseasViewModel> getModelClass() {
@@ -30,22 +31,20 @@ public class DiseasFragment extends BaseFragment<FragmentDiseasBinding, DiseasVi
     @Override
     public void onStart() {
         super.onStart();
-        FirebaseApp.initializeApp(getActivity().getApplicationContext());
-        database = FirebaseDatabase.getInstance();
-        reference = database.getReference("benh");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    String key = data.getKey();
-                    String value = data.getValue().toString();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.w("FIREBASE", "loadPost:onCancelled", databaseError.toException());
-            }
-        });
+//        reference = database.getReference("benh");
+//        reference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for (DataSnapshot data : dataSnapshot.getChildren()) {
+//                    String key = data.getKey();
+//                    String value = data.getValue().toString();
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Log.w("FIREBASE", "loadPost:onCancelled", databaseError.toException());
+//            }
+//        });
     }
 }

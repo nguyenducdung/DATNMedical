@@ -7,10 +7,10 @@
         android:layout_height="match_parent"
         android:text="@string/splash_fragment"
         tools:ignore="UselessLeaf">
-
-        <TextView
+        <ImageView
+            android:src="@drawable/splash"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/splash_fragment" />
+            android:layout_height="match_parent"
+            android:contentDescription="@string/todo" />
     </FrameLayout>
 </layout>

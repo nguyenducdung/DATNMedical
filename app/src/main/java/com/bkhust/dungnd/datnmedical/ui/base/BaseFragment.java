@@ -13,12 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bkhust.dungnd.datnmedical.R;
+import com.bkhust.dungnd.datnmedical.ui.dialog.DialogLoading;
 import com.bkhust.dungnd.datnmedical.ui.main.MainActivity;
 import com.bkhust.dungnd.datnmedical.ui.main.MainViewModel;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DatabaseReference;
+import com.bkhust.dungnd.datnmedical.utils.Define;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.Objects;
 
@@ -30,9 +29,7 @@ public abstract class BaseFragment<Binding extends ViewDataBinding, V extends Vi
     protected V viewModel;
     protected MainViewModel mainViewModel;
     protected NavController navController;
-
-    protected DatabaseReference reference;
-
+    private static long lastClickTime = System.currentTimeMillis();
 
     @Nullable
     @Override
@@ -49,7 +46,6 @@ public abstract class BaseFragment<Binding extends ViewDataBinding, V extends Vi
         navController = Navigation.findNavController(Objects.requireNonNull(getActivity()), R.id.navHostFragment);
         mainViewModel = ViewModelProviders.of(getActivity()).get(MainViewModel.class);
         viewModel = ViewModelProviders.of(getActivity()).get(getModelClass());
-
     }
 
     protected abstract Class<V> getModelClass();
@@ -60,5 +56,34 @@ public abstract class BaseFragment<Binding extends ViewDataBinding, V extends Vi
         if (getActivity() != null) {
             ((MainActivity) getActivity()).getToolBar().setTitle(title);
         }
+    }
+
+    protected void showLoading() {
+        DialogLoading.getInstance(getContext()).show();
+    }
+
+    protected void hideLoading() {
+        DialogLoading.getInstance(getContext()).hidden();
+    }
+
+    protected void showButtonBack() {
+        if (getActivity() != null) {
+            ((MainActivity) getActivity()).showButtonBack();
+        }
+    }
+
+    protected void hideButtonBack() {
+        if (getActivity() != null) {
+            ((MainActivity) getActivity()).hideButtonBack();
+        }
+    }
+
+    protected boolean isDuplicateClick() {
+        long now = System.currentTimeMillis();
+        if (now - lastClickTime < Define.CLICK_TIME_INTERVAL) {
+            return true;
+        }
+        lastClickTime = now;
+        return false;
     }
 }

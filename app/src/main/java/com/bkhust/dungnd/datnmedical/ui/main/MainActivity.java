@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.databinding.ActivityMainBinding;
 import com.bkhust.dungnd.datnmedical.ui.base.BaseActivity;
+import com.google.firebase.FirebaseApp;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
     private MainViewModel mainViewModel;
@@ -25,11 +26,25 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        FirebaseApp.initializeApp(this);
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
     }
 
     public Toolbar getToolBar() {
         return binding.toolbar;
+    }
+
+    public void showButtonBack() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
+    }
+
+    public void hideButtonBack() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            getSupportActionBar().setHomeButtonEnabled(false);
+        }
     }
 }
