@@ -43,9 +43,14 @@ public abstract class BaseFragment<Binding extends ViewDataBinding, V extends Vi
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        navController = Navigation.findNavController(Objects.requireNonNull(getActivity()), R.id.navHostFragment);
         mainViewModel = ViewModelProviders.of(getActivity()).get(MainViewModel.class);
         viewModel = ViewModelProviders.of(getActivity()).get(getModelClass());
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(Objects.requireNonNull(getActivity()), R.id.navHostFragment);
     }
 
     protected abstract Class<V> getModelClass();

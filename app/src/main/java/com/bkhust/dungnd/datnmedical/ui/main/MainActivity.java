@@ -1,17 +1,13 @@
 package com.bkhust.dungnd.datnmedical.ui.main;
 
-import android.arch.lifecycle.ViewModelProviders;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.content.res.Configuration;
 import android.support.v7.widget.Toolbar;
 
 import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.databinding.ActivityMainBinding;
 import com.bkhust.dungnd.datnmedical.ui.base.BaseActivity;
-import com.google.firebase.FirebaseApp;
 
-public class MainActivity extends BaseActivity<ActivityMainBinding> {
-    private MainViewModel mainViewModel;
+public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
 
     @Override
     protected void inits() {
@@ -24,10 +20,23 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        FirebaseApp.initializeApp(this);
-        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+    protected Class<MainViewModel> getModelClass() {
+        return MainViewModel.class;
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     public Toolbar getToolBar() {
