@@ -14,4 +14,10 @@
     <string name="fragment_news">Tin tức</string>
     <string name="todo">TODO</string>
 
+    <!--Notification-->
+    <string name="exit_app">Bạn có muốn thoát ứng dụng không?</string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="exit">Cancel</string>
+
 </resources>

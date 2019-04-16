@@ -13,11 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bkhust.dungnd.datnmedical.R;
-import com.bkhust.dungnd.datnmedical.ui.dialog.DialogLoading;
+import com.bkhust.dungnd.datnmedical.ui.dialog.LoadingDialog;
 import com.bkhust.dungnd.datnmedical.ui.main.MainActivity;
 import com.bkhust.dungnd.datnmedical.ui.main.MainViewModel;
 import com.bkhust.dungnd.datnmedical.utils.Define;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
@@ -64,11 +63,11 @@ public abstract class BaseFragment<Binding extends ViewDataBinding, V extends Vi
     }
 
     protected void showLoading() {
-        DialogLoading.getInstance(getContext()).show();
+        LoadingDialog.getInstance(getContext()).show();
     }
 
     protected void hideLoading() {
-        DialogLoading.getInstance(getContext()).hidden();
+        LoadingDialog.getInstance(getContext()).hidden();
     }
 
     protected void showButtonBack() {

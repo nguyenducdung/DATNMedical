@@ -5,10 +5,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.diseas.DiseasFragment">
+        tools:ignore="UselessLeaf">
 
         <android.support.v7.widget.RecyclerView
-            tools:listitem="@layout/item_diseas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </RelativeLayout>

@@ -8,8 +8,17 @@ import android.support.v7.widget.Toolbar;
 import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.databinding.ActivityMainBinding;
 import com.bkhust.dungnd.datnmedical.ui.base.BaseActivity;
+import com.bkhust.dungnd.datnmedical.ui.dialog.NotificationDialog;
+import com.bkhust.dungnd.datnmedical.utils.SystemUtils;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
+
+    private NavHostFragment navHostFragment;
+    private NavController navController;
 
     @Override
     protected void inits() {
@@ -34,7 +43,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.navHostFragment);
+        navController = Navigation.findNavController(this, R.id.navHostFragment);
     }
 
     @Override
@@ -44,7 +54,33 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        SystemUtils.hideKeyboard(this);
+        if (navController.getCurrentDestination() != null) {
+            if (navController.getCurrentDestination().getId() == R.id.homeFragment ) {
+                showDialogExitApp();
+            } else {
+                super.onBackPressed();
+            }
+        }
+
+    }
+
+    private void showDialogExitApp() {
+        final NotificationDialog dialog = new NotificationDialog(this);
+        dialog.setContent(getString(R.string.exit_app))
+                .onClickPositiveButton(getString(R.string.ok), new NotificationDialog.OnDialogPackingClickListener() {
+                    @Override
+                    public void onDialogButtonClick() {
+                        finish();
+                    }
+                })
+                .onClickNegativeButton(getString(R.string.exit), new NotificationDialog.OnDialogPackingClickListener() {
+                    @Override
+                    public void onDialogButtonClick() {
+                        dialog.setCanceledOnTouchOutside();
+                    }
+                })
+                .show();
     }
 
     @Override

@@ -6,8 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="UselessLeaf">
-        <TextView
-            android:text="@string/fragment_medicine"
+
+        <android.support.v7.widget.RecyclerView
+            tools:listitem="@layout/item_medicine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </RelativeLayout>
