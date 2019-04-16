@@ -29,8 +29,18 @@ public class DiseasFragment extends BaseFragment<FragmentDiseasBinding, DiseasVi
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
+        if (getActivity() != null) {
+            getActivity().setTitle(R.string.fragment_disease);
+            showButtonBack();
+        }
 //        reference = database.getReference("benh");
 //        reference.addValueEventListener(new ValueEventListener() {
 //            @Override

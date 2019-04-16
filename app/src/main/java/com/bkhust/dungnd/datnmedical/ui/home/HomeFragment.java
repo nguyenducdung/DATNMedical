@@ -24,12 +24,15 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeViewMode
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public void onStart() {
         super.onStart();
+        if (getActivity() != null) {
+            getActivity().setTitle(R.string.app_name);
+            hideButtonBack();
+        }
         binding.fragmentDisease.setOnClickListener(this);
         binding.fragmentChineseMedicine.setOnClickListener(this);
         binding.fragmentFood.setOnClickListener(this);

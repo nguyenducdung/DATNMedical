@@ -1,6 +1,8 @@
 package com.bkhust.dungnd.datnmedical.ui.main;
 
 import android.content.res.Configuration;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 
 import com.bkhust.dungnd.datnmedical.R;
@@ -30,6 +32,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     }
 
     @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
     }
@@ -37,6 +45,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     public Toolbar getToolBar() {
