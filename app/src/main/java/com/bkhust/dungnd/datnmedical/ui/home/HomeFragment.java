@@ -33,30 +33,34 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeViewMode
             getActivity().setTitle(R.string.app_name);
             hideButtonBack();
         }
-        binding.fragmentDisease.setOnClickListener(this);
-        binding.fragmentChineseMedicine.setOnClickListener(this);
-        binding.fragmentFood.setOnClickListener(this);
-        binding.fragmentLogin.setOnClickListener(this);
-        binding.fragmentMedicine.setOnClickListener(this);
+        binding.ccDiseas.setOnClickListener(this);
+        binding.ccChineseMedicine.setOnClickListener(this);
+        binding.ccFood.setOnClickListener(this);
+        binding.ccLogin.setOnClickListener(this);
+        binding.ccMedicine.setOnClickListener(this);
+        binding.ccNews.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.fragmentDisease:
+            case R.id.ccDiseas:
                 navController.navigate(R.id.action_homeFragment_to_diseasFragment);
                 break;
-            case R.id.fragmentChineseMedicine:
+            case R.id.ccChineseMedicine:
                 navController.navigate(R.id.action_homeFragment_to_chineseMedicineFragment);
                 break;
-            case R.id.fragmentFood:
+            case R.id.ccFood:
                 navController.navigate(R.id.action_homeFragment_to_foodFragment);
                 break;
-            case R.id.fragmentLogin:
+            case R.id.ccLogin:
                 navController.navigate(R.id.action_homeFragment_to_loginFragment);
                 break;
-            case R.id.fragmentMedicine:
+            case R.id.ccMedicine:
                 navController.navigate(R.id.action_homeFragment_to_medicineFragment);
+                break;
+            case R.id.ccNews:
+                navController.navigate(R.id.action_homeFragment_to_newsFragment);
                 break;
             default:
                 break;
