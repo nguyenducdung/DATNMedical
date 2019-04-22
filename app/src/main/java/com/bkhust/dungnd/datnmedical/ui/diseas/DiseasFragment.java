@@ -1,22 +1,22 @@
 package com.bkhust.dungnd.datnmedical.ui.diseas;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 
 import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.databinding.FragmentDiseasBinding;
+import com.bkhust.dungnd.datnmedical.ui.ItemClick;
 import com.bkhust.dungnd.datnmedical.ui.base.BaseFragment;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class DiseasFragment extends BaseFragment<FragmentDiseasBinding, DiseasViewModel> {
     private DatabaseReference reference;
+    private DiseasAdapter diseasAdapter;
 
     @Override
     protected Class<DiseasViewModel> getModelClass() {
@@ -56,5 +56,21 @@ public class DiseasFragment extends BaseFragment<FragmentDiseasBinding, DiseasVi
 //                Log.w("FIREBASE", "loadPost:onCancelled", databaseError.toException());
 //            }
 //        });
+        setupRecycleView();
+    }
+
+    private void setupRecycleView() {
+        diseasAdapter = new DiseasAdapter();
+        binding.rvDiseas.setAdapter(diseasAdapter);
+        binding.rvDiseas.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(Objects.requireNonNull(getContext()), DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), R.drawable.devider)));
+        binding.rvDiseas.addItemDecoration(dividerItemDecoration);
+        diseasAdapter.setItemClick(new ItemClick() {
+            @Override
+            public void onItemClick(int position) {
+                navController.navigate(R.id.action_diseasFragment_to_diseasDetailFragment);
+            }
+        });
     }
 }

@@ -7,6 +7,7 @@
     <string name="fragment_disease">Bệnh</string>
     <string name="fragment_disease_detail">Chi tiết bệnh</string>
     <string name="fragment_food">Món ăn</string>
+    <string name="fragment_food_detail">Chi tiết Món ăn</string>
     <string name="fragment_home">Home</string>
     <string name="fragment_login">Login</string>
     <string name="fragment_medicine">Thuốc</string>

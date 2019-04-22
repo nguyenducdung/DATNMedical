@@ -54,7 +54,11 @@
         android:id="@+id/foodFragment"
         android:name="com.bkhust.dungnd.datnmedical.ui.food.FoodFragment"
         android:label="FoodFragment"
-        tools:layout="@layout/fragment_food"/>
+        tools:layout="@layout/fragment_food">
+        <action
+            android:id="@+id/action_foodFragment_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.bkhust.dungnd.datnmedical.ui.login.LoginFragment"
@@ -73,7 +77,11 @@
         android:id="@+id/newsFragment"
         android:name="com.bkhust.dungnd.datnmedical.ui.news.NewsFragment"
         android:label="NewsFragment"
-        tools:layout="@layout/fragment_news"/>
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_newsFragment_to_newDetailFragment"
+            app:destination="@id/newDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/chineseMedicineFragment"
         android:name="com.bkhust.dungnd.datnmedical.ui.chinese.ChineseMedicineFragment"
@@ -89,4 +97,14 @@
         android:name="com.bkhust.dungnd.datnmedical.ui.medicine.detail.MedicineDetailFragment"
         android:label="MedicineDetailFragment"
         tools:layout="@layout/fragment_medicine_detail"/>
+    <fragment
+        tools:layout="@layout/fragment_food_detail"
+        android:id="@+id/foodDetailFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.food.detail.FoodDetailFragment"
+        android:label="FoodDetailFragment" />
+    <fragment
+        tools:layout="@layout/fragment_news_detail"
+        android:id="@+id/newDetailFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.news.detail.NewDetailFragment"
+        android:label="NewDetailFragment" />
 </navigation>

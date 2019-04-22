@@ -4,7 +4,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/elevation">
+        android:elevation="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"

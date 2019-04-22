@@ -9,6 +9,7 @@
         tools:context=".ui.diseas.DiseasFragment">
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvDiseas"
             tools:listitem="@layout/item_diseas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
