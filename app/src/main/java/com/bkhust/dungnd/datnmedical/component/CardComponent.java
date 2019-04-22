@@ -2,11 +2,9 @@ package com.bkhust.dungnd.datnmedical.component;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.databinding.DataBindingUtil;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 
 import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.databinding.LayoutCardBinding;
@@ -37,8 +35,8 @@ public class CardComponent extends CardView {
 
     private void init(Context context) {
         mContext = context;
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_card, this, true);
-        DataBindingUtil.bind(view);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        binding = LayoutCardBinding.inflate(inflater, this, true);
     }
 
     private void setParams(AttributeSet attrs) {
