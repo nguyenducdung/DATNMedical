@@ -20,4 +20,6 @@
     <dimen name="common_120">120dp</dimen>
     <dimen name="elevation">8dp</dimen>
 
+    <dimen name="margin_home">16dp</dimen>
+
 </resources>

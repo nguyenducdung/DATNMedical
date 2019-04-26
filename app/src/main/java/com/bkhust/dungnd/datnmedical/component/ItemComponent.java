@@ -64,5 +64,11 @@ public class ItemComponent extends CardView {
         return this;
     }
 
+    public ItemComponent setVisibleBack(boolean visibleBack) {
+        binding.ivBack.setVisibility(visibleBack ? VISIBLE : GONE);
+        return this;
+    }
+
+
 
 }

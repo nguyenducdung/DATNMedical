@@ -1,39 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.v7.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="0dp">
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <ImageView
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:id="@+id/iv_item"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="@dimen/padding_normal"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/medical1" />
 
         <RelativeLayout
+            android:layout_marginStart="@dimen/padding_normal"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/iv_item"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp">
-
-            <ImageView
-                android:id="@+id/iv_item"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/padding_normal"
-                android:contentDescription="@string/todo"
-                android:scaleType="centerCrop"
-                android:src="@drawable/medical1" />
-
+            android:layout_height="wrap_content">
             <TextView
+                android:layout_marginEnd="26dp"
+                android:textStyle="bold"
                 android:id="@+id/tv_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/padding_normal"
-                android:layout_toEndOf="@id/iv_item"
                 android:text="Thuốc"
                 android:textColor="@android:color/black"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:typeface="normal" />
+
+            <TextView
+                android:layout_marginEnd="26dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:id="@+id/tv_item_detail"
+                android:textSize="14sp"
+                android:layout_below="@id/tv_item"
+                android:text="Đây là loại thuốc giúp giảm đau hiệu quả ... "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </RelativeLayout>
-    </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_marginEnd="12dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_right_black"
+            android:layout_width="10dp"
+            android:layout_height="20dp"
+            tools:ignore="ContentDescription" />
+        <View
+            android:layout_below="@id/iv_item"
+            android:background="#DBDBDB"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+    </RelativeLayout>
 </layout>

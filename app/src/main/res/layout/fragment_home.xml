@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <RelativeLayout
-        android:background="@color/bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/bg"
         tools:context=".ui.home.HomeFragment">
+
         <RelativeLayout
-            android:padding="8dp"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="8dp">
 
             <com.bkhust.dungnd.datnmedical.component.CardComponent
                 android:id="@+id/ccMedicine"
@@ -21,56 +23,54 @@
                 app:cc_text="Thuốc" />
 
             <com.bkhust.dungnd.datnmedical.component.CardComponent
-                android:layout_marginStart="32dp"
-                app:cc_text="Bệnh"
-                app:cc_src_image="@drawable/medical2"
                 android:id="@+id/ccDiseas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_home"
                 android:layout_toEndOf="@id/ccMedicine"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                app:cc_src_image="@drawable/medical2"
+                app:cc_text="Bệnh" />
 
             <com.bkhust.dungnd.datnmedical.component.CardComponent
-                app:cc_text="Món ăn"
-                app:cc_src_image="@drawable/medical3"
-                android:layout_marginTop="32dp"
                 android:id="@+id/ccFood"
-                android:layout_below="@id/ccMedicine"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ccMedicine"
+                android:layout_marginTop="@dimen/margin_home"
+                app:cc_src_image="@drawable/medical3"
+                app:cc_text="Món ăn" />
 
             <com.bkhust.dungnd.datnmedical.component.CardComponent
-                app:cc_src_image="@drawable/medical4"
-                app:cc_text="Tin tức"
-                android:layout_marginStart="32dp"
-                android:layout_toEndOf="@id/ccFood"
                 android:id="@+id/ccNews"
-                android:layout_marginTop="32dp"
-                android:layout_below="@id/ccMedicine"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ccMedicine"
+                android:layout_marginStart="@dimen/margin_home"
+                android:layout_marginTop="@dimen/margin_home"
+                android:layout_toEndOf="@id/ccFood"
+                app:cc_src_image="@drawable/medical4"
+                app:cc_text="Tin tức" />
 
             <com.bkhust.dungnd.datnmedical.component.CardComponent
                 android:id="@+id/ccChineseMedicine"
-                android:layout_below="@id/ccFood"
-                android:layout_marginTop="32dp"
-                app:cc_text="Thuốc dân gian"
-                app:cc_src_image="@drawable/medical5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ccFood"
+                android:layout_marginTop="@dimen/margin_home"
+                app:cc_src_image="@drawable/medical5"
+                app:cc_text="Bài thuốc dân gian" />
 
             <com.bkhust.dungnd.datnmedical.component.CardComponent
-                app:cc_src_image="@drawable/medical6"
-                app:cc_text="Đăng nhập tài khoản"
-                android:layout_toEndOf="@id/ccChineseMedicine"
                 android:id="@+id/ccLogin"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_below="@id/ccFood"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ccFood"
+                android:layout_marginStart="@dimen/margin_home"
+                android:layout_marginTop="@dimen/margin_home"
+                android:layout_toEndOf="@id/ccChineseMedicine"
+                app:cc_src_image="@drawable/medical6"
+                app:cc_text="Đăng nhập tài khoản" />
         </RelativeLayout>
-
-
 
     </RelativeLayout>
 

@@ -4,15 +4,15 @@
     <!--Screen Name-->
     <string name="splash_fragment">Splash Fragment</string>
     <string name="fragment_chinese_medicine">Bài thuốc dân gian</string>
-    <string name="fragment_disease">Bệnh</string>
+    <string name="fragment_disease">Các nhóm bệnh</string>
     <string name="fragment_disease_detail">Chi tiết bệnh</string>
-    <string name="fragment_food">Món ăn</string>
+    <string name="fragment_food">Món ăn dinh dưỡng</string>
     <string name="fragment_food_detail">Chi tiết Món ăn</string>
     <string name="fragment_home">Home</string>
     <string name="fragment_login">Login</string>
-    <string name="fragment_medicine">Thuốc</string>
+    <string name="fragment_medicine">Các nhóm thuốc</string>
     <string name="fragment_medicine_detail">Chi tiết thuốc</string>
-    <string name="fragment_news">Tin tức</string>
+    <string name="fragment_news">Tin tức sức khỏe</string>
     <string name="todo">TODO</string>
 
     <!--Notification-->
