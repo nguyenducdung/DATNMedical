@@ -63,9 +63,6 @@ public class DiseasFragment extends BaseFragment<FragmentDiseasBinding, DiseasVi
         diseasAdapter = new DiseasAdapter();
         binding.rvDiseas.setAdapter(diseasAdapter);
         binding.rvDiseas.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(Objects.requireNonNull(getContext()), DividerItemDecoration.VERTICAL);
-        dividerItemDecoration.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), R.drawable.devider)));
-        binding.rvDiseas.addItemDecoration(dividerItemDecoration);
         diseasAdapter.setItemClick(new ItemClick() {
             @Override
             public void onItemClick(int position) {

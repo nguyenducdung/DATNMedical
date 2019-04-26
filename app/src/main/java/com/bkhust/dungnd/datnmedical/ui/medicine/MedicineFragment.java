@@ -47,9 +47,6 @@ public class MedicineFragment extends BaseFragment<FragmentMedicineBinding, Medi
         medicineAdapter = new MedicineAdapter();
         binding.rvMedicine.setAdapter(medicineAdapter);
         binding.rvMedicine.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(Objects.requireNonNull(getContext()), DividerItemDecoration.VERTICAL);
-        dividerItemDecoration.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), R.drawable.devider)));
-        binding.rvMedicine.addItemDecoration(dividerItemDecoration);
         medicineAdapter.setItemClick(new ItemClick() {
             @Override
             public void onItemClick(int position) {
