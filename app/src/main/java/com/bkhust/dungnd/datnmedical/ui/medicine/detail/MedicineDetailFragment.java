@@ -2,6 +2,7 @@ package com.bkhust.dungnd.datnmedical.ui.medicine.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 
 import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.databinding.FragmentMedicineDetailBinding;
@@ -27,9 +28,12 @@ public class MedicineDetailFragment extends BaseFragment<FragmentMedicineDetailB
     @Override
     public void onStart() {
         super.onStart();
-        if (getActivity() != null) {
-            getActivity().setTitle(R.string.fragment_medicine_detail);
-            showButtonBack();
-        }
+        hideToolbar();
+        binding.ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigateUp();
+            }
+        });
     }
 }

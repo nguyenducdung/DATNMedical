@@ -41,6 +41,7 @@ public class FoodFragment extends BaseFragment<FragmentFoodBinding, FoodViewMode
             showButtonBack();
         }
         setupRecycleView();
+        showToolbar();
     }
 
     private void setupRecycleView() {

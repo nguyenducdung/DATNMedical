@@ -21,15 +21,11 @@ public class DiseasDetailFragment extends BaseFragment<FragmentDiseaseDetailBind
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        if (getActivity() != null) {
-            getActivity().setTitle(R.string.fragment_disease_detail);
-            showButtonBack();
-        }
+        hideToolbar();
     }
 }

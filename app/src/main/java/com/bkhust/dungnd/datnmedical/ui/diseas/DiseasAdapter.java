@@ -30,12 +30,17 @@ public class DiseasAdapter extends RecyclerView.Adapter<DiseasAdapter.DiseaseVie
     @Override
     public void onBindViewHolder(@NonNull DiseaseViewHolder holder, int i) {
         holder.binding.ivItem.setImageResource(R.drawable.medical2);
-        holder.binding.tvItem.setText("Bệnh");
+        holder.binding.tvItem.setText(benhs.get(i).getTenLoaiBenh());
+    }
+
+    public void setData(List<Benh> benhs) {
+        this.benhs = benhs;
+        notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return benhs.size();
     }
 
     public void setItemClick(ItemClick click) {

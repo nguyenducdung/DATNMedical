@@ -3,12 +3,86 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
+        android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="UselessLeaf">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:padding="12dp"
+            android:src="@drawable/ic_close_black"
+            tools:ignore="ContentDescription" />
+
         <TextView
-            android:text="@string/fragment_disease_detail"
+            android:id="@+id/tvTitle"
+            android:fontFamily="@font/lato_bold"
+            android:textSize="20sp"
+            android:layout_marginEnd="?attr/actionBarSize"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="Bệnh sốt rét"
+            android:layout_toEndOf="@id/iv_back"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="?attr/actionBarSize"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/iv_back">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvTrieuChung"
+                    android:textSize="18sp"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="@android:color/black"
+                    android:text="Biểu hiện và triệu chứng"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvTrieuChungDetail"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/lato_regular"
+                    android:layout_below="@id/tvTrieuChung"
+                    android:text="Các biểu hiện và triệu chứng của sốt rét đặc biệt bắt đầu thể hiện từ ngày thứ 8 đến 25 sau khi nhiễm;[7] tuy nhiên, các triệu chứng có thể thể hiện muộn hơn đối với những người đã sử dụng thuốc chống sốt rét.[8] Biểu hiện ban đầu của bệnh-chung cho tất cả các loài-là các triệu chứng giống cảm cúm,[9] và có thể tương tự như các trường hợp khác như nhiễm trùng, viêm ruột và bệnh do virus.[8] Biểu hiện của bệnh có thể gồm đau đầu, sốt, run, đau khớp, nôn, thiếu máu tán huyết, vàng da, tiểu ra máu, tổn thương võng mạc, và co giật.[10]
+
+Các triệu chứng điển hình của bệnh sốt rét là kịch phát, đó là sự xuất hiện theo chu kỳ của cơn lạnh đột ngột sau đó run rẩy và sau đó sốt và đổ mồ hôi, xảy ra cứ mỗi hai ngày đối với nhiễm trùng loài P. vivax và P. ovale, và cứ ba ngày đối với nhiễm trùng P. malariae. Nhiễm trùng P. falciparum có thể gây sốt tái phát mỗi 36-48 giờ hoặc sốt ít rõ ràng hơn và gần như liên tục.[11]"
+                    android:layout_margin="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvNguyenNhan"
+                    android:textSize="18sp"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="@android:color/black"
+                    android:layout_below="@id/tvTrieuChungDetail"
+                    android:text="Nguyên nhân"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvNguyenNhanDetail"
+                    android:layout_margin="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/lato_regular"
+                    android:layout_below="@id/tvNguyenNhan"
+                    android:text="Ký sinh trùng sốt rét thuộc chi Plasmodium (ngành Apicomplexa). Ở người, sốt rét gây ra bởi các loài P. falciparum, P. malariae, P. ovale, P. vivax và P. knowlesi.[12][13] Nằm trong số nhiễm các loài trên, loài P. falciparum là loài phổ biến nhất đã được xác định (~75%) theo sau là P. vivax (~20%).[8] Mặc dù P. falciparum thường gây ra số lượng tử vong lớn,[14] những bằng chứng gần đây cho thấy rằng số rét P. vivax có quan hệ với các tình trạng đe dọa tính mạng tiềm năng cũng gần tương tự về mặt chẩn đoán như lây nhiễm P. falciparum.[15] P. vivax tương đối phổ biến hơn ngoài châu Phi.[16] Đã có ghi nhận các trường hợp người bị mắc bệnh bởi các loài trong chi Plasmodium từ khỉ; tuy nhiên, với sự loại trừ loài P. knowlesi—một loài gây bệnh sốt rét ở khỉ[13]—đây chủ yếu là sự hạn chế về chăm sóc sức khỏe cộng đồng.[17]"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+        </ScrollView>
     </RelativeLayout>
 </layout>

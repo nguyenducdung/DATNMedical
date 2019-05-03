@@ -106,4 +106,16 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
             getSupportActionBar().setHomeButtonEnabled(false);
         }
     }
+
+    public void hideToolbar() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+    }
+
+    public void showToolbar() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().show();
+        }
+    }
 }

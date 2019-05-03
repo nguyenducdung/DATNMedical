@@ -24,6 +24,7 @@ public class FoodDetailFragment extends BaseFragment<FragmentFoodDetailBinding, 
         if (getActivity() != null) {
             getActivity().setTitle(R.string.fragment_food_detail);
             showButtonBack();
+            showToolbar();
         }
     }
 }

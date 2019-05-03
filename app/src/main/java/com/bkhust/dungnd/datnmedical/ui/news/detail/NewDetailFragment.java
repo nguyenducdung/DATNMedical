@@ -24,6 +24,7 @@ public class NewDetailFragment extends BaseFragment<FragmentNewsDetailBinding, N
         if (getActivity() != null) {
             getActivity().setTitle("Chi tiết Báo");
             showButtonBack();
+            showToolbar();
         }
     }
 }

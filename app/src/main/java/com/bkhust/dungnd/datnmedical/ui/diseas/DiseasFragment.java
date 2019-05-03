@@ -10,6 +10,7 @@ import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.databinding.FragmentDiseasBinding;
 import com.bkhust.dungnd.datnmedical.ui.ItemClick;
 import com.bkhust.dungnd.datnmedical.ui.base.BaseFragment;
+import com.bkhust.dungnd.datnmedical.utils.DummyData;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.Objects;
@@ -41,6 +42,7 @@ public class DiseasFragment extends BaseFragment<FragmentDiseasBinding, DiseasVi
             getActivity().setTitle(R.string.fragment_disease);
             showButtonBack();
         }
+        showToolbar();
 //        reference = database.getReference("benh");
 //        reference.addValueEventListener(new ValueEventListener() {
 //            @Override
@@ -63,11 +65,16 @@ public class DiseasFragment extends BaseFragment<FragmentDiseasBinding, DiseasVi
         diseasAdapter = new DiseasAdapter();
         binding.rvDiseas.setAdapter(diseasAdapter);
         binding.rvDiseas.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+//        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(Objects.requireNonNull(getContext()), DividerItemDecoration.VERTICAL);
+//        dividerItemDecoration.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), R.drawable.devider)));
+//        binding.rvDiseas.addItemDecoration(dividerItemDecoration);
         diseasAdapter.setItemClick(new ItemClick() {
             @Override
             public void onItemClick(int position) {
                 navController.navigate(R.id.action_diseasFragment_to_diseasDetailFragment);
             }
         });
+
+        diseasAdapter.setData(DummyData.benhList());
     }
 }

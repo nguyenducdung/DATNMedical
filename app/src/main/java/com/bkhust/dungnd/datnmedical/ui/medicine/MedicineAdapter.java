@@ -29,12 +29,12 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.Medici
     @Override
     public void onBindViewHolder(@NonNull MedicineViewHolder holder, int i) {
         holder.binding.ivItem.setImageResource(R.drawable.medical1);
-        holder.binding.tvItem.setText("Thuốc");
+        holder.binding.tvItem.setText(thuocs.get(i).getTenThuoc());
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return thuocs.size();
     }
 
     public void setItemClick(ItemClick click) {

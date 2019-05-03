@@ -30,6 +30,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginViewM
         if (getActivity() != null) {
             getActivity().setTitle(R.string.fragment_login);
             showButtonBack();
+            showToolbar();
         }
     }
 }

@@ -3,12 +3,114 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
+        android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="UselessLeaf">
-        <TextView
-            android:text="@string/fragment_medicine_detail"
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:padding="12dp"
+            android:src="@drawable/ic_close_black"
+            tools:ignore="ContentDescription" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:layout_below="@id/iv_back">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/paracetamol"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivTitle"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Thuốc paracetamol"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTitle"
+                    android:layout_margin="16dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Paracetamol ​làm giảm thân nhiệt ở người bệnh sốt, nhưng hiếm khi làm giảm thân nhiệt ở người bình thường. Thuốc tác động lên vùng dưới đồi gây hạ nhiệt, tỏa nhiệt tăng do giãn tĩnh mạch và tăng lưu lượng máu ngoại biên. "
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvLieuDung"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvDetail"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Liều dùng và cách dùng"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvLieuDungChiTiet"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:text="Dùng theo chỉ dẫn của bác sĩ hoặc theo liều khuyến cáo.
+Người lớn và trẻ em trên 12 tuổi: uống mỗi lần 1 - 2 viên, ngày 3 - 4 lần.
+Không dùng quá 8 viên/ ngày."
+                    android:fontFamily="@font/lato_regular"
+                    android:layout_below="@id/tvLieuDung"
+                    android:layout_margin="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tvTacDungPhu"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/lato_bold"
+                    android:layout_marginStart="16dp"
+                    android:text="Tác dụng phụ"
+                    android:layout_below="@id/tvLieuDungChiTiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginBottom="16dp"
+                    android:id="@+id/tvTacDungPhuDetail"
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="@android:color/black"
+                    android:text="- Gọi cấp cứu nếu bạn có bất cứ dấu hiệu dị ứng: phát ban; khó thở; sưng mặt, môi, lưỡi, hoặc họng.
+
+- Ngưng dùng thuốc này và gọi cho bác sĩ ngay nếu bạn mắc tác dụng phụ nghiêm trọng như:
+
+   + Buồn nôn, đau bụng trên, ngứa, mất cảm giác ngon miệng;
+
+   + Nước tiểu đậm màu, phân màu đất sét;
+
+   + Vàng da (vàng da hoặc mắt).
+
+Không phải ai cũng biểu hiện các tác dụng phụ như trên. Có thể có các tác dụng phụ khác không được đề cập. Nếu bạn có bất kỳ thắc mắc nào về các tác dụng phụ, hãy tham khảo ý kiến bác sĩ hoặc dược sĩ."
+                    android:textSize="18sp"
+                    android:layout_margin="16dp"
+                    android:layout_below="@id/tvTacDungPhu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+        </ScrollView>
     </RelativeLayout>
 </layout>

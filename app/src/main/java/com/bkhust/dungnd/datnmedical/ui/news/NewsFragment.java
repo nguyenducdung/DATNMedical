@@ -39,6 +39,7 @@ public class NewsFragment extends BaseFragment<FragmentNewsBinding, NewsViewMode
         if (getActivity() != null) {
             getActivity().setTitle(R.string.fragment_news);
             showButtonBack();
+            showToolbar();
         }
         setupRecycleView();
     }
