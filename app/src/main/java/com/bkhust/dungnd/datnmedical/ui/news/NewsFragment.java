@@ -48,9 +48,6 @@ public class NewsFragment extends BaseFragment<FragmentNewsBinding, NewsViewMode
         newsAdapter = new NewsAdapter();
         binding.rvNews.setAdapter(newsAdapter);
         binding.rvNews.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(Objects.requireNonNull(getContext()), DividerItemDecoration.VERTICAL);
-        dividerItemDecoration.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), R.drawable.devider)));
-        binding.rvNews.addItemDecoration(dividerItemDecoration);
         newsAdapter.setItemClick(new ItemClick() {
             @Override
             public void onItemClick(int position) {

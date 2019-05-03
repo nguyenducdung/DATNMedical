@@ -48,9 +48,6 @@ public class FoodFragment extends BaseFragment<FragmentFoodBinding, FoodViewMode
         adapter = new FoodAdapter();
         binding.rvFood.setAdapter(adapter);
         binding.rvFood.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(Objects.requireNonNull(getContext()), DividerItemDecoration.VERTICAL);
-        dividerItemDecoration.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), R.drawable.devider)));
-        binding.rvFood.addItemDecoration(dividerItemDecoration);
         adapter.setItemClick(new ItemClick() {
             @Override
             public void onItemClick(int position) {
