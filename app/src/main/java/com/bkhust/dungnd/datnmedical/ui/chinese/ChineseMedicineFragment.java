@@ -31,5 +31,6 @@ public class ChineseMedicineFragment extends BaseFragment<FragmentChineseMedicin
             getActivity().setTitle(R.string.fragment_chinese_medicine);
             showButtonBack();
         }
+        showToolbar();
     }
 }

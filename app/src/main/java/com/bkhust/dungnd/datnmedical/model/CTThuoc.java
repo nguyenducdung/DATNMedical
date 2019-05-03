@@ -15,6 +15,11 @@ public class CTThuoc {
         this.noiDung = noiDung;
     }
 
+    public CTThuoc(int maThuoc, String tenThuoc) {
+        this.maThuoc = maThuoc;
+        this.tenThuoc = tenThuoc;
+    }
+
     public int getMaThuoc() {
         return maThuoc;
     }

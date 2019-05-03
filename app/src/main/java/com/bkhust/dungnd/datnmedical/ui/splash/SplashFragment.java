@@ -11,7 +11,6 @@ import com.bkhust.dungnd.datnmedical.ui.base.BaseFragment;
 public class SplashFragment extends BaseFragment<FragmentSplashBinding, SplashViewModel> {
 
     public static final int DELAY_TIME = 2000;
-    private ActionBar actionBar;
 
     @Override
     protected Class<SplashViewModel> getModelClass() {
@@ -28,14 +27,13 @@ public class SplashFragment extends BaseFragment<FragmentSplashBinding, SplashVi
         super.onStart();
         hideToolbar();
         goHomeFragment();
+        hideToolbar();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (actionBar != null) {
-            actionBar.show();
-        }
+        showToolbar();
     }
 
     private void goHomeFragment() {
@@ -45,14 +43,5 @@ public class SplashFragment extends BaseFragment<FragmentSplashBinding, SplashVi
                 navController.navigate(R.id.action_splashFragment_to_homeFragment);
             }
         }, DELAY_TIME);
-    }
-
-    private void hideToolbar() {
-        if (getActivity() != null) {
-            actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-            if (actionBar != null) {
-                actionBar.hide();
-            }
-        }
     }
 }

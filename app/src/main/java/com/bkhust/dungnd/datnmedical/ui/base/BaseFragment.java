@@ -44,6 +44,7 @@ public abstract class BaseFragment<Binding extends ViewDataBinding, V extends Vi
         super.onCreate(savedInstanceState);
         mainViewModel = ViewModelProviders.of(getActivity()).get(MainViewModel.class);
         viewModel = ViewModelProviders.of(getActivity()).get(getModelClass());
+        showToolbar();
     }
 
     @Override
@@ -89,5 +90,17 @@ public abstract class BaseFragment<Binding extends ViewDataBinding, V extends Vi
         }
         lastClickTime = now;
         return false;
+    }
+
+    protected void hideToolbar() {
+        if (getActivity() != null) {
+            ((MainActivity) getActivity()).hideToolbar();
+        }
+    }
+
+    protected void showToolbar() {
+        if (getActivity() != null) {
+            ((MainActivity) getActivity()).showToolbar();
+        }
     }
 }

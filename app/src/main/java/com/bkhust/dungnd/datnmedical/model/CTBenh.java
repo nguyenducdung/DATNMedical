@@ -17,6 +17,11 @@ public class CTBenh {
         this.maThuoc = maThuoc;
     }
 
+    public CTBenh(int maBenh, String tenBenh) {
+        this.maBenh = maBenh;
+        this.tenBenh = tenBenh;
+    }
+
     public int getMaBenh() {
         return maBenh;
     }

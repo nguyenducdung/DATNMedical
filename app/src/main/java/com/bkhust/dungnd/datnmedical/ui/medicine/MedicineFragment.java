@@ -11,6 +11,7 @@ import com.bkhust.dungnd.datnmedical.databinding.FragmentMedicineBinding;
 import com.bkhust.dungnd.datnmedical.ui.ItemClick;
 import com.bkhust.dungnd.datnmedical.ui.base.BaseFragment;
 import com.bkhust.dungnd.datnmedical.ui.food.FoodAdapter;
+import com.bkhust.dungnd.datnmedical.utils.DummyData;
 
 import java.util.Objects;
 
@@ -41,21 +42,24 @@ public class MedicineFragment extends BaseFragment<FragmentMedicineBinding, Medi
             showButtonBack();
         }
         setupRecycleView();
+        showToolbar();
     }
 
     private void setupRecycleView() {
         medicineAdapter = new MedicineAdapter();
         binding.rvMedicine.setAdapter(medicineAdapter);
         binding.rvMedicine.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(Objects.requireNonNull(getContext()), DividerItemDecoration.VERTICAL);
-        dividerItemDecoration.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), R.drawable.devider)));
-        binding.rvMedicine.addItemDecoration(dividerItemDecoration);
+//        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(Objects.requireNonNull(getContext()), DividerItemDecoration.VERTICAL);
+//        dividerItemDecoration.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), R.drawable.devider)));
+//        binding.rvMedicine.addItemDecoration(dividerItemDecoration);
         medicineAdapter.setItemClick(new ItemClick() {
             @Override
             public void onItemClick(int position) {
                 navController.navigate(R.id.action_medicineFragment_to_medicineDetailFragment);
             }
         });
+
+        medicineAdapter.setDatas(DummyData.thuocList());
     }
 
 }

@@ -32,6 +32,7 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeViewMode
         if (getActivity() != null) {
             getActivity().setTitle(R.string.app_name);
             hideButtonBack();
+            showToolbar();
         }
         binding.ccDiseas.setOnClickListener(this);
         binding.ccChineseMedicine.setOnClickListener(this);
