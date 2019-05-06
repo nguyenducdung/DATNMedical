@@ -1,4 +1,4 @@
-package com.bkhust.dungnd.datnmedical.ui.diseas;
+package com.bkhust.dungnd.datnmedical.ui.medicine;
 
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
@@ -9,51 +9,49 @@ import android.view.ViewGroup;
 
 import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.databinding.LayoutItemBinding;
-import com.bkhust.dungnd.datnmedical.model.Benh;
+import com.bkhust.dungnd.datnmedical.model.Thuoc;
 import com.bkhust.dungnd.datnmedical.ui.ItemClick;
-import com.bkhust.dungnd.datnmedical.ui.medicine.MedicineAdapter;
 
 import java.util.List;
 
-public class DiseasAdapter extends RecyclerView.Adapter<DiseasAdapter.DiseaseViewHolder> {
-    private List<Benh> benhs;
+public class MedicineGroupAdapter extends RecyclerView.Adapter<MedicineGroupAdapter.MedicineViewHolder> {
+    private List<Thuoc> thuocs;
     private ItemClick itemClick;
 
     @NonNull
     @Override
-    public DiseaseViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public MedicineViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         LayoutItemBinding binding = LayoutItemBinding.inflate(inflater, viewGroup, false);
-        return new DiseaseViewHolder(binding.getRoot());
+        return new MedicineViewHolder(binding.getRoot());
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DiseaseViewHolder holder, int i) {
-        holder.binding.ivItem.setImageResource(R.drawable.medical2);
-        holder.binding.tvItem.setText(benhs.get(i).getTenLoaiBenh());
-    }
-
-    public void setData(List<Benh> benhs) {
-        this.benhs = benhs;
-        notifyDataSetChanged();
+    public void onBindViewHolder(@NonNull MedicineViewHolder holder, int i) {
+        holder.binding.ivItem.setImageResource(R.drawable.medical1);
+        holder.binding.tvItem.setText(thuocs.get(i).getTenThuoc());
     }
 
     @Override
     public int getItemCount() {
-        return benhs.size();
+        return thuocs.size();
     }
 
     public void setItemClick(ItemClick click) {
         this.itemClick = click;
     }
 
-    public class DiseaseViewHolder extends RecyclerView.ViewHolder {
+    public void setDatas(List<Thuoc> thuocs) {
+        this.thuocs = thuocs;
+        notifyDataSetChanged();
+    }
+
+    public class MedicineViewHolder extends RecyclerView.ViewHolder {
 
         private LayoutItemBinding binding;
 
-        public DiseaseViewHolder(@NonNull View itemView) {
+        public MedicineViewHolder(@NonNull View itemView) {
             super(itemView);
-
             binding = DataBindingUtil.bind(itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -61,7 +59,6 @@ public class DiseasAdapter extends RecyclerView.Adapter<DiseasAdapter.DiseaseVie
                     itemClick.onItemClick(getAdapterPosition());
                 }
             });
-
         }
     }
 }

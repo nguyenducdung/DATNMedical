@@ -43,9 +43,9 @@
     </fragment>
     <fragment
         android:id="@+id/diseasFragment"
-        android:name="com.bkhust.dungnd.datnmedical.ui.diseas.DiseasFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.diseas.DiseasGroupFragment"
         android:label="DiseasFragment"
-        tools:layout="@layout/fragment_diseas">
+        tools:layout="@layout/fragment_diseas_group">
         <action
             android:id="@+id/action_diseasFragment_to_diseasDetailFragment"
             app:destination="@id/diseasDetailFragment" />
@@ -66,9 +66,9 @@
         tools:layout="@layout/fragment_login"/>
     <fragment
         android:id="@+id/medicineFragment"
-        android:name="com.bkhust.dungnd.datnmedical.ui.medicine.MedicineFragment"
+        android:name="com.bkhust.dungnd.datnmedical.ui.medicine.MedicineGroupFragment"
         android:label="MedicineFragment"
-        tools:layout="@layout/fragment_medicine">
+        tools:layout="@layout/fragment_medicine_group">
         <action
             android:id="@+id/action_medicineFragment_to_medicineDetailFragment"
             app:destination="@id/medicineDetailFragment" />

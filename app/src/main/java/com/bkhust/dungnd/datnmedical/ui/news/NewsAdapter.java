@@ -11,7 +11,6 @@ import com.bkhust.dungnd.datnmedical.R;
 import com.bkhust.dungnd.datnmedical.databinding.LayoutItemBinding;
 import com.bkhust.dungnd.datnmedical.model.TinTuc;
 import com.bkhust.dungnd.datnmedical.ui.ItemClick;
-import com.bkhust.dungnd.datnmedical.ui.medicine.MedicineAdapter;
 
 import java.util.List;
 
